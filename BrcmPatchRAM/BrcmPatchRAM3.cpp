@@ -188,6 +188,7 @@ bool BrcmPatchRAM::start(IOService *provider)
     uint64_t start_time, end_time, nano_secs;
     IOReturn result;
     bool success = false;
+    uint8_t bytes[] {0x00, 0x00, 0x00, 0x00};
     
     DebugLog("start\n");
     
@@ -238,7 +239,6 @@ bool BrcmPatchRAM::start(IOService *provider)
     
     success = true;
     setName("bluetooth");
-    uint8_t bytes[] {0x00, 0x00, 0x00, 0x00};
     setProperty("transport-encoding", bytes, sizeof(bytes));
     setProperty("dhinak was here", false);
     registerService();
