@@ -241,7 +241,7 @@ bool BrcmPatchRAM::start(IOService *provider)
     setName("bluetooth");
     setProperty("transport-encoding", bytes, sizeof(bytes));
     setProperty("dhinak was here", false);
-    registerService();
+    // registerService();
     goto done;
     
     /*
