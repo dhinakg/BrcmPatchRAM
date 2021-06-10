@@ -237,6 +237,11 @@ bool BrcmPatchRAM::start(IOService *provider)
     uploadFirmware();
     
     success = true;
+    setName("bluetooth");
+    uint8_t bytes[] {0x00, 0x00, 0x00, 0x00};
+    setProperty("transport-encoding", bytes, sizeof(bytes));
+    setProperty("dhinak was here", false);
+    registerService();
     goto done;
     
     /*
